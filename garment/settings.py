@@ -33,7 +33,7 @@ SECRET_KEY = config('SECRET_KEY')
 # .env
 DEBUG = config('DEBUG', default=True, cast=bool)  # True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['webbrand-env.eba-pwtud6xq.us-west-2.elasticbeanstalk.com']
 
 
 # Application definition
