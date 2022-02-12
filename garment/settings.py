@@ -14,10 +14,10 @@ from django.contrib.messages import constants as messages
 from pathlib import Path
 # sect25-len117
 from decouple import config
+import boto3
 
 
-
-
+client = boto3.client('elasticbeanstalk')
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 
@@ -33,7 +33,7 @@ SECRET_KEY = config('SECRET_KEY')
 # .env
 DEBUG = config('DEBUG', default=True, cast=bool)  # True
 
-ALLOWED_HOSTS = ['webrand-env.eba-ha5s6vpw.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['webbrand-env.eba-wjgabdjq.us-west-2.elasticbeanstalk.com']
 
 
 # Application definition
@@ -101,15 +101,11 @@ AUTH_USER_MODEL = 'accounts.Account'
 
 # Database Configuration
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
-
-
-
-
+}
 
 
 # Password validation
